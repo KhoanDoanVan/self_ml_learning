@@ -54,7 +54,7 @@ x \in \mathbb{R}
 ## 2. Vectors
 
 ### 2.1 Vector Definition
-\[
+$
 \mathbf{x} = 
 \begin{bmatrix}
 x_1 \\
@@ -63,7 +63,7 @@ x_2 \\
 x_n
 \end{bmatrix}
 \in \mathbb{R}^n
-\]
+$
 
 ---
 
