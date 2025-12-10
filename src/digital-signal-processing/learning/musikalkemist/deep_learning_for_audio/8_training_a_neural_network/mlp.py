@@ -30,6 +30,8 @@ class MLP(object):
             weights.append(w)
         self.weights = weights
 
+        print("Weights: ", weights)
+
         # save derivatives per layer
         derivatives = []
         for i in range(len(layers) - 1):
@@ -37,12 +39,16 @@ class MLP(object):
             derivatives.append(d)
         self.derivatives = derivatives
 
+        print("Derivatives: ", derivatives)
+
         # save activations per layer
         activations = []
         for i in range(len(layers)):
             a = np.zeros(layers[i])
             activations.append(a)
         self.activations = activations
+
+        print("Activations: ", activations)
 
 
     def forward_propagate(self, inputs):
