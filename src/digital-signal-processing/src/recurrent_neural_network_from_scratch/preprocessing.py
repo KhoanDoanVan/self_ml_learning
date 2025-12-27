@@ -3,10 +3,15 @@ import numpy as np
 import itertools
 import nltk
 
+import nltk
+nltk.download('punkt')
+nltk.download('punkt_tab')
+
+
 
 def getSentenceData(
         path,
-        vocabulary_size: 8000
+        vocabulary_size=8000
 ):
     
     unknown_token = "UNKNOWN_TOKEN"
@@ -19,7 +24,7 @@ def getSentenceData(
     with open(path, "r", encoding="utf-8") as f:
         reader = csv.reader(
             f,
-            skipinitialspace=True
+            skipinitialspace=True  
         )
         # Split full comments into sentences
         sentences = itertools.chain(
@@ -42,7 +47,7 @@ def getSentenceData(
     print("Found %d unique words tokens." % len(word_freq.items()))
 
     # Get the most common words and build index_to_word and word_to_index vectors
-    vocab = word_freq.most_common(vocabulary_size=1)
+    vocab = word_freq.most_common(n=1)
     index_to_word = [x[0] for x in vocab]
     index_to_word.append(unknown_token)
     word_to_index = dict(
@@ -86,4 +91,4 @@ def getSentenceData(
 
 
 if __name__ == "__main__":
-    X_train, y_train = getSentenceData('./data/reddit-comments-2015-08.csv')
+    X_train, y_train = getSentenceData('./data/reddit-comments-2015-08.csv',vocabulary_size=1)
