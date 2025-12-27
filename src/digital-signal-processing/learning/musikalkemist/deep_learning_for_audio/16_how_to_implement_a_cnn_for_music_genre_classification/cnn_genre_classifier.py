@@ -114,7 +114,7 @@ def build_model(
     # Build network topology
     model = keras.Sequential()
 
-    # 1st conv layer
+    # 1st co¡nv layer
     model.add(
         keras.layers.Conv2D(
             32,
