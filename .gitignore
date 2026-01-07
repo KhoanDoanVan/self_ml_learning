@@ -4,5 +4,5 @@
 .w3s_wl_environment
 
 
-/src/digital-signal-processing/src/lstm_from_scratch/input/
-/src/digital-signal-processing/src/convolution_neural_network_from_scratch/input
+/src/deep-learning-for-audio/src/lstm_from_scratch/input/
+/src/deep-learning-for-audio/src/convolution_neural_network_from_scratch/input
