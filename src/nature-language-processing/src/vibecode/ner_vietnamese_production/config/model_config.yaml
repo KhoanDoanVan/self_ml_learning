@@ -1,0 +1,48 @@
+# Vietnamese NER Model Configuration
+
+seed: 42
+use_cuda: true
+output_dir: "./outputs"
+log_dir: "./logs"
+cache_dir: "./cache"
+
+
+model:
+  name: "phobert_ner"
+  pretrained_model: "vinai/phobert-base"
+  hidden_size: 768
+  num_labels: 13 # B-PER, I-PER, B-ORG, I-ORG, B-LOC, I-LOC, B-MISC, I-MISC, B-DATE, I-DATE, B-NUM, I-NUM, O
+  dropout: 0.1
+  learning_rate: 5e-5
+  max_seq_length: 256
+
+training:
+  batch_size: 16
+  num_epochs: 10
+  gradient_accumulation_steps: 2
+  warmup_steps: 500
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  save_steps: 500
+  eval_steps: 250
+  logging_steps: 50
+
+data:
+  train_path: "./data/train.conll"
+  valid_path: "./data/valid.conll"
+  test_path: "./data/test.conll"
+  label_list:
+    - "O"
+    - "B-PER"
+    - "I-PER"
+    - "B-ORG"
+    - "I-ORG"
+    - "B-LOC"
+    - "I-LOC"
+    - "B-MISC"
+    - "I-MISC"
+    - "B-DATE"
+    - "I-DATE"
+    - "B-NUM"
+    - "I-NUM"
+  max_samples: null
