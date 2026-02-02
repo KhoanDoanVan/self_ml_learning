@@ -35,7 +35,7 @@ Related:
 - Instruction hierarchy
 - Prompt injection
 - Output constraints
-- JSON schema enforcement
+- JSON schema enforcement 
 - Function calling
 - Tool calling
 
