@@ -37,7 +37,7 @@ class LayoutAwareConv2D:
     def forward(self, x: EdgeTensor) -> EdgeTensor:
         input_layout = x.layout
 
-        # Convert to preferred layout if needed
+        # Convert to preferred layout if needed 
         if x.layout != self.layout:
             x = x.to_layout(self.layout)
 
